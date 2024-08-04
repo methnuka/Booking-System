@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <footer class="footer">
+
+
+
+        <div class="container">
+            <div class="container1">
+                <img src="booking2-removebg-preview.png" id="uniqueImageId"></a>
+                <hr>
+
+
+            </div>
+
+            <div class="row">
+                <div class="container2">
+                    <div class="word">
+                        <h2>stay in the loop and sign up<br> for the booking </h2>
+                        <input type="email" placeholder="Enter your email">
+                        <button>➔</button>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+
+                    <h4>online shopping</h4>
+                    <ul>
+                        <li><a href="http://">watch</a></li>
+                        <li><a href="http://">bag</a></li>
+                        <li><a href="http://">shoes</a></li>
+                        <li><a href="http://">drinks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        function addFooterContent() {
+            const footerBottom = document.getElementById('footer-bottom');
+
+            const privacyLink = document.createElement('a');
+            privacyLink.href = '#';
+            privacyLink.textContent = 'Privacy Policy';
+            footerBottom.appendChild(privacyLink);
+
+            const copyrightText = document.createElement('p');
+            const currentYear = new Date().getFullYear();
+            copyrightText.textContent = `© ${currentYear} Your Company Name. All rights reserved.`;
+            footerBottom.appendChild(copyrightText);
+        }
+
+        // Call the function to add the content when the page loads
+        window.onload = addFooterContent;
+    </script>
+</body>
+
+</html>
