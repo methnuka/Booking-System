@@ -3,31 +3,30 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Optional: background color */
 }
 
 .center {
-    width: 100%;
-    height: 100%;
+    width: 80%; /* Takes 80% of the screen width */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.ticket {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+    max-width: 1200px; /* Optional: Set a maximum width */
 }
 
 .tickets {
-    width: 700px;
+    width: 80%;
     height: fit-content;
     border: 0.4mm solid rgba(0, 0, 0, 0.08);
     border-radius: 3mm;
     box-sizing: border-box;
-    padding: 10px;
-    font-family: poppins;
+    padding: 20px; /* Increased padding */
+    font-family: 'Poppins', sans-serif;
     max-height: 96vh;
     overflow: auto;
     box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -41,6 +40,73 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     padding: 20px;
+}
+
+.inf {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Increased margin for spacing */
+    font-size: 18px; /* Set font size */
+}
+
+.seat-numbers, .count, .amount {
+    font-weight: normal;
+    text-align: right;
+    font-family: 'Poppins', sans-serif; /* Ensure font family consistency */
+    font-size: 18px; /* Ensure consistent font size */
+}
+
+.count, .amount {
+    margin-left: 5px; /* Bring the numbers closer to the labels */
+}
+
+.inf span {
+    font-weight: 600;
+}
+
+.seat-numbers {
+    margin-left: 5px; /* Bring the seat numbers closer to "Tickets" */
+}
+
+.price {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(137, 144, 152);
+    padding: 20px; /* Reduced padding */
+    border-radius: 5px;
+    color: white;
+    font-size: 18px; /* Set consistent font size */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 250px;
+}
+
+.total span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.price button {
+    background: rgb(60, 60, 60);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; /* Increased button font size */
+    padding: 10px 20px; /* Increased padding for the button */
+    border-radius: 2mm;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 .container {
@@ -60,8 +126,9 @@ body {
 }
 
 .title {
-    font-size: 16px;
+    font-size: 18px; /* Increased title font size */
     font-weight: 600;
+    margin-bottom: 20px; /* Added margin to space out the title */
 }
 
 .seats {
@@ -72,8 +139,7 @@ body {
     flex-direction: column;
     min-height: 150px;
     position: relative;
-    padding-left: 15px;
-    padding-right: 20px;
+    padding: 20px; /* Increased padding */
 }
 
 .status {
@@ -83,11 +149,12 @@ body {
     justify-content: space-evenly;
     margin-bottom: 20px;
     flex-direction: row;
-    gap: 15px;
+    gap: 20px;
+    font-size: 18px; /* Increased font size for status items */
 }
 
 .item {
-    font-size: 12px;
+    font-size: 18px;
     position: relative;
 }
 
@@ -117,16 +184,16 @@ body {
 .all-seats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-gap: 40px; /* Increased gap between seats */
     margin: 20px 0;
     position: relative;
 }
 
 .seat {
-    width: 20px;
-    height: 20px;
+    width: 30px; /* Increased seat size */
+    height: 30px;
     background: white;
-    border-radius: 0.5mm;
+    border-radius: 1mm;
     outline: 0.3mm solid rgb(180, 180, 180);
     cursor: pointer;
 }
@@ -143,42 +210,4 @@ body {
 
 input {
     display: none;
-}
-
-.price {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    flex-direction: column;
-}
-
-.total {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(137, 144, 152);
-    padding: 50px;
-    border-radius: 5px;
-    color: white;
-    font-size: 18px;
-}
-
-.total span {
-    font-size: 11px;
-    font-weight: 400;
-}
-
-.price button {
-    background: rgb(60, 60, 60);
-    color: white;
-    font-family: poppins;
-    font-size: 14px;
-    padding: 7px 14px;
-    border-radius: 2mm;
-    outline: none;
-    border: none;
-    cursor: pointer;
 }

@@ -226,6 +226,25 @@ input[type="submit"]:hover,
 .btn:hover {
     background-color: #ddd;
 }
+
+.lable-colomn button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #000000;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.lable-colomn button:hover {
+    background-color: #817e7e;
+    color: #000;
+}
     </style>
     <script><?php include("script.js");?></script>
 </head>
@@ -307,7 +326,7 @@ input[type="submit"]:hover,
                             <div class="lable-colomn">'.$row['Arrival'].'</div>
                             <div class="lable-colomn">'.$row['Fare'].'</div>
                         </div>
-                        <hr style="border: 2px solid black;width:80%;">';
+                        <hr style="border: 2px solid black;width:80%;margin-top: 50px;">';
                 }
             }else{
                 echo '<h2>Data not found</h2>';
