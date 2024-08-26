@@ -15,48 +15,35 @@
 
 <body>
     <div class="center">
+        <div class="title">Reservation</div>
         <div class="tickets">
-            <table>
-                <tr>
-                    <td>
-                        <div class="ticket-selector">
-                            <div class="head">
-                                <div class="title">Movie Name</div>
-                            </div>
-                            <div class="seats">
-                                <div class="status">
-                                    <div class="item">Available</div>
-                                    <div class="item">Booked</div>
-                                    <div class="item">Selected</div>
-                                </div>
-                                <div class="all-seats">
-                                    <input type="checkbox" name="tickets" id="s1" />
-                                    <label for="s1" class="seat booked"></label>
-                                </div>
-                            </div>
-                    </td>
-                    <td>
-                        <div class="timings">
-
+            <div class="container">
+                <div>
+                    <div class="seats">
+                        <div class="status">
+                            <div class="item">Available</div>
+                            <div class="item">Booked</div>
+                            <div class="item">Selected</div>
                         </div>
-                        <div class="price">
-                            <div class="total">
-                                <span> <span class="count">0</span> Tickets </span>
-
-                            </div>
-
+                        <div class="all-seats"></div>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="total">
+                        <div class="inf">Selected seats:
+                            <div class="seat-numbers"></div>
                         </div>
+                        <div class="ticket">
+                            <div class="count">0</div> tickets
+                            <div class="amount">0</div> RS
                         </div>
-                        <div class="amount">0</div>
-                        <button type="button">Book</button>
-                    </td>
-
-                </tr>
-
-            </table>
-
+                    </div>
+                    <button type="button">Book</button>
+                </div>
+            </div>
         </div>
-        <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
