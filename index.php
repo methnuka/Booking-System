@@ -319,15 +319,21 @@ input[type="submit"]:hover,
                 <div class="lable-colomn"><lable><b>To</b></lable></div>
                 <div class="lable-colomn"><lable><b>Fare</b></lable></div>
             </div>';
-                while($row = mysqli_fetch_assoc($result)){
-                    echo ' <div class="lable-elementBlock">
-                            <div class="lable-colomn">'.$row['Depature'].'</div>
-                            <div class="lable-colomn">'.$row['Duration'].'</div>
-                            <div class="lable-colomn">'.$row['Arrival'].'</div>
-                            <div class="lable-colomn">'.$row['Fare'].'</div>
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="lable-elementBlock">
+                        <div class="lable-colomn">' . $row['Depature'] . '</div>
+                        <div class="lable-colomn">' . $row['Duration'] . '</div>
+                        <div class="lable-colomn">' . $row['Arrival'] . '</div>
+                        <div class="lable-colomn">' . $row['Fare'] . '</div>
+                        <div class="lable-colomn">
+                            <form method="POST" action="http://localhost/Booking-System/booking_page/index.php/">
+                                <input type="hidden" name="arrival" value="' . htmlspecialchars($row['Arrival']) . '">
+                                <button type="submit">Book</button>
+                            </form>
                         </div>
-                        <hr style="border: 2px solid black;width:80%;margin-top: 50px;">';
-                }
+                    </div>
+                    <hr style="border: 2px solid black;width:80%;margin-top: 50px;">';
+            }
             }else{
                 echo '<h2>Data not found</h2>';
             }
