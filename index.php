@@ -184,6 +184,7 @@ input[type="submit"]:hover,
 .lable-colomn{
     padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 40px;
 }
 .lable-elementBlock{
     display: flex;
@@ -228,7 +229,8 @@ input[type="submit"]:hover,
 }
 
 .lable-colomn button {
-    margin-top: 10px;
+    margin-top: -20px;
+    margin-right: 10px;
     width: 100%;
     padding: 15px;
     padding-left: 30px;
@@ -324,15 +326,19 @@ input[type="submit"]:hover,
                         <div class="lable-colomn">' . $row['Depature'] . '</div>
                         <div class="lable-colomn">' . $row['Duration'] . '</div>
                         <div class="lable-colomn">' . $row['Arrival'] . '</div>
-                        <div class="lable-colomn">' . $row['Fare'] . '</div>
+                        <div>
+                        <div class="lable-colomn">' . 'LKR ' . $row['Fare'] . '</div>
                         <div class="lable-colomn">
                             <form method="POST" action="http://localhost/Booking-System/booking_page/index.php/">
                                 <input type="hidden" name="arrival" value="' . htmlspecialchars($row['Arrival']) . '">
+                                <input type="hidden" name="fare" value="' . htmlspecialchars($row['Fare']) . '"> 
                                 <button type="submit">Book</button>
                             </form>
                         </div>
+                        </div>
+                        
                     </div>
-                    <hr style="border: 2px solid black;width:80%;margin-top: 50px;">';
+                    <hr style="border: 2px solid black;width:80%;margin-top: 75px;">';
             }
             }else{
                 echo '<h2>Data not found</h2>';

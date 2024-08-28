@@ -336,7 +336,7 @@ input {
 
     let tickets = seats.querySelectorAll("input:not([disabled])"); // Select only non-disabled tickets
     let selectedSeats = [];
-    const ticketPrice = 200; // Price per ticket
+    const ticketPrice = 400; // Price per ticket
 
     tickets.forEach((ticket) => {
         ticket.addEventListener("change", () => {
