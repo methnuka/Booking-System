@@ -339,8 +339,8 @@ input[type="submit"]:hover,
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body {
-    line-height: 1.5;
+.footer{
+    margin-top: 50px;
 }
 
 .container {
@@ -560,7 +560,6 @@ ul {
     padding: 10px;
     border: 1.5px solid #ccc;
     border-radius: 20px 0 0 20px;
-    /* Rounded corners for the left side */
     outline: none;
     flex: 1;
 }
@@ -569,7 +568,6 @@ ul {
     padding: 10px 20px;
     border-left: none;
     border-radius: 0 20px 20px 0;
-    /* Rounded corners for the right side */
     background-color: #374360;
     color: white;
     cursor: pointer;
@@ -814,7 +812,6 @@ ul {
                 <hr class="footerrule2" />
 
             </div>
-
             <div class="row">
                 <div class="container2">
                     <div class="word">
