@@ -274,7 +274,7 @@ input {
                 <div class="price">
                 <div class="information-box">
                     <div class="title"><lable>Reservation</lable></div>
-                    <hr style="border: 2px solid black; width: 300%; margin: 10px -65%; 0;">
+                    <hr style="border: 2px solid black; width: 100%; margin: 10px auto;">
                     <div class="information-item">
                         <div class="symbol">&#x26AA;</div>
                         <label>Makubura</label>
@@ -296,21 +296,46 @@ input {
                         </div>
                     </div>
                 </div>
-                    <div class="total">
-                        <div class="inf">
-                            <span>Selected seats</span>
-                            <span><span class="count">0</span> tickets</span>
-                        </div>
-                        <div class="inf">
-                            <span>Seat number</span>
-                            <span class="seat-numbers"></span>
-                        </div>
-                        <div class="inf">
-                            <span>Ticket Price</span>
-                            <span><span class="amount">0</span> RS</span>
-                        </div>
-                    </div>
-                    <button type="button">Book</button>
+                <form action="/receipts1/index.php" method="POST">
+    <div class="total">
+        <div class="inf">
+            <span>Selected seats</span>
+            <span><span class="count">0</span> tickets</span>
+            <!-- Hidden input for selected seats -->
+            <input type="hidden" name="selected_seats" class="hidden-seats" value="0">
+        </div>
+        <div class="inf">
+            <span>Seat number</span>
+            <span class="seat-numbers"></span>
+            <!-- Hidden input for seat numbers -->
+            <input type="hidden" name="seat_numbers" class="hidden-seat-numbers" value="">
+        </div>
+        <div class="inf">
+            <span>Ticket Price</span>
+            <span><span class="amount">0</span> RS</span>
+            <!-- Hidden input for ticket price -->
+            <input type="hidden" name="ticket_price" class="hidden-ticket-price" value="0">
+        </div>
+    </div>
+    <button type="submit">Book</button>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+        const selectedSeatsInput = document.querySelector(".hidden-seats");
+        const seatNumbersInput = document.querySelector(".hidden-seat-numbers");
+        const ticketPriceInput = document.querySelector(".hidden-ticket-price");
+
+        form.addEventListener("submit", (event) => {
+            // Update hidden inputs with actual values
+            selectedSeatsInput.value = document.querySelector(".count").textContent;
+            seatNumbersInput.value = document.querySelector(".seat-numbers").textContent;
+            ticketPriceInput.value = document.querySelector(".amount").textContent;
+        });
+    });
+</script>
+                    
                 </div>
                 
             </div>
@@ -330,7 +355,7 @@ input {
         seats.insertAdjacentHTML(
             "beforeend",
             `<input type="checkbox" name="tickets" id="s${i + 2}" ${booked ? "disabled" : ""}/>
-             <label for="s${i + 2}" class="seat ${booked}" data-seat="${seatNumber}"></label>`
+            <label for="s${i + 2}" class="seat ${booked}" data-seat="${seatNumber}"></label>`
         );
     }
 

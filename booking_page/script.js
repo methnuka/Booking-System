@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let randint = Math.floor(Math.random() * 2);
         let booked = randint === 1 ? "booked" : "";
         let seatNumber = String.fromCharCode(65 + Math.floor(i / 4)) + (i % 4 + 1); // Generate seat number (A1, A2, ...)
-        
+
         // Add the input element with disabled attribute if booked
         seats.insertAdjacentHTML(
             "beforeend",
@@ -42,5 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".seat-numbers").textContent = selectedSeats.join(', ');
         });
     });
-});
 
+
+
+});
