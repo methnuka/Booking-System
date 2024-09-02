@@ -1,30 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body {
-    line-height: 1.5;
-    font-family: 'poppins', sans-serif;
-    margin: 0;
     display: flex;
-    min-height: 100vh;
-    flex-direction: column; /* Stack elements vertically */
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    flex-direction: column;
 }
 
-header {
-    background-color: #ddd;
-    padding: 10px 20px;
-}
 
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
-     
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 nav li {
@@ -33,6 +19,7 @@ nav li {
     padding-left: 60px;
     padding-right: 60px;
 }
+
 nav a {
     text-decoration: none;
     color: #000;
@@ -40,166 +27,90 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-}
+} */
 
 .container {
     display: flex;
-    flex: 1; /* Take up remaining space after header */
-}
-
-.image-column{
-    flex: 1;
-}
-.login-column {
-    flex: 1;
-    padding: 5px;
+    flex-direction: row;
 }
 
 .image-column {
-    background-color: #f0f0f0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .login-column {
-    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100vh;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-.login-column h1 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.login-column form {
+.inlog {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-column form label {
-    font-weight: bold;
-}
-
-.login-column form input,
-.login-column form button {
+.inlog input[type="email"],
+.inlog input[type="password"] {
+    margin-bottom: 20px;
     padding: 10px;
+    width: 100%;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.login-column form button {
-    background-color: #000000;
+.inlog label {
+    margin-bottom: 5px;
+}
+
+.inlog button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    background-color: #007bff;
     color: white;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.login-column form button:hover {
-    background-color: #46a0
+.inlog button:hover {
+    background-color: #0056b3;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
-}
-*{
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
-}
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-ul{
-	list-style: none;
-}
-.footer{
-	background-color: #24262b;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 70px;
-}
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #bbbbbb;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
-.logo{
-    font-size: 20px;
-    font-weight: 800;
-    color: #000000;
-}
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 30%;
-    margin-bottom: 20px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
+
+.email,
+.password {
     width: 100%;
 }
+
+.hr {
+    transform: translateY(- %);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
-
-
-
+.hr::before,
+.hr::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 10px;
+}
