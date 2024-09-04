@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$first_name', '$last_name', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        header('location: http://localhost/Booking-System/index.php/');
+        header('location: http://localhost/Booking-System/');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

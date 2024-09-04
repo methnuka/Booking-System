@@ -659,7 +659,7 @@ a.privacy-policy:hover {
             </div>
             <div class="nav-links">
                 <ul class="nav-list">
-                    <li><a href="http://localhost/Booking-System/index.php/">Home</a></li>
+                    <li><a href="http://localhost/Booking-System/">Home</a></li>
                     <li><a href="http://localhost/Booking-System/about-us/">About Us</a></li>
                 </ul>
             </div>
