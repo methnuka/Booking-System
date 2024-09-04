@@ -1,51 +1,47 @@
 <?php
-    
+    // Database connection variables
     $db_server = "localhost";
     $db_user = "root";
     $db_pass = "";
-    $db_name = "login_page";
-    $db_port = 3306; // Define the port if it's not the default 3306
+    $db_name = "bookingsystem";
 
-    
-    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name, $db_port);
+    // Establish a connection to the database
+    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 
-    
+    // Check if the connection was successful
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    
+    // Check if the form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+        // Escape special characters in form input
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
 
+        // Validate input fields
         if (empty($email)) {
             echo "Please enter an email address.";
         } elseif (empty($password)) {
             echo "Please enter a password.";
         } else {
-           
-            $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            
-            $date_time = date('Y-m-d H:i:s');
+            // Query to select user from the database
+            $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+            $results = mysqli_query($conn, $query);
 
-           
-            $stmt = $conn->prepare("INSERT INTO login_users (email, password, date_time) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $email, $hash, $date_time);
-
-           
-            if ($stmt->execute()) {
-                echo "You have been registered successfully.";
+            // Check if the user exists in the database
+            if (mysqli_num_rows($results) == 1) {
+                // Redirect to another page if login is successful
+                header('Location: http://localhost/Booking-System/index.php/');
+                exit(); // Make sure to stop the script after redirection
             } else {
-                echo "Error: " . $stmt->error;
+    
+                echo 'Wrong username/password combination';
             }
-
-            
-            $stmt->close();
         }
     }
 
-   
+    // Close the database connection
     mysqli_close($conn);
 ?>

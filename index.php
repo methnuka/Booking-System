@@ -19,7 +19,7 @@ html {
 .image {
     margin: auto;
     width: 100%;
-    background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.1)), url('../images/pic.png') no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.1)), url('pic.png') no-repeat;
     background-size: cover;
     /* background-attachment: fixed;  */
     background-position: center;
@@ -263,7 +263,7 @@ input[type="submit"]:hover,
 .logo {
     width: 88px;
     cursor: pointer;
-    background:  url('images\Group 48.png') no-repeat;
+    margin-left: 30px;
 }
 
 .nav-links {
@@ -281,10 +281,11 @@ input[type="submit"]:hover,
 .nav-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 50px;
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-left: 500px;
 }
 
 .nav-list li a {
@@ -300,22 +301,11 @@ input[type="submit"]:hover,
 .auth-actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 50px;
 }
 
-.signin-btn {
-    background-color: #a6c1ee;
-    color: white;
-    padding: 10px 40px;
-    border-radius: 9999px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.signin-btn:hover {
-    background-color: #87accc;
-}
+
 
 .menu-icon {
     font-size: 24px;
@@ -353,7 +343,6 @@ input[type="submit"]:hover,
 
 .row {
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
 }
@@ -390,6 +379,7 @@ ul {
     height: 100%;
     width: auto;
     padding-bottom: 20px;
+    display: flex;
 }
 
 .footer-col {
@@ -634,23 +624,16 @@ ul {
     margin-right: 50px;
 }
 
-.privacy-policy,
-.terms-conditions {
-    padding: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
+a.privacy-policy {
+    color: gray;
+    text-decoration: none; 
 }
 
-.privacy-policy:hover,
-.terms-conditions:hover {
-    text-decoration: underline;
+a.privacy-policy:hover {
     color: white;
-    transition: all;
 }
 
 
-/*responsive*/
 
 @media(max-width: 767px) {
     .footer-col {
@@ -672,19 +655,13 @@ ul {
     <header class="bg-white">
         <nav class="navbar">
             <div>
-                <img class="logo" src="/images/Group 48.png" alt="Logo">
+                <img class="logo" src="logo.png" alt="Logo">
             </div>
             <div class="nav-links">
                 <ul class="nav-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="http://localhost/Booking-System/index.php/">Home</a></li>
+                    <li><a href="http://localhost/Booking-System/about-us/">About Us</a></li>
                 </ul>
-            </div>
-            <div class="auth-actions">
-                <button class="signin-btn">Sign In</button>
-                <ion-icon onclick="onToggleMenu(this)" name="menu" class="menu-icon"></ion-icon>
             </div>
         </nav>
     </header>
@@ -803,9 +780,6 @@ ul {
     </div>
 
     <footer class="footer">
-
-
-
         <div class="container">
             <div class="container1">
                 <img src="/images/booking2-removebg-preview.png" id="uniqueImageId"></a>
@@ -827,18 +801,16 @@ ul {
 
                 <div class="footer-col">
 
-                    <h4 class="heading4">online shopping</h4>
+                    <h4 class="heading4">Pages</h4>
                     <ul>
-                        <li class="categories"><a href="http://">watch</a></li>
-                        <li class="categories"><a href="http://">bag</a></li>
-                        <li class="categories"><a href="http://">shoes</a></li>
-                        <li class="categories"><a href="http://">drinks</a></li>
+                        <li class="categories"><a href="http://localhost/Booking-System/index.php/">Home</a></li>
+                        <li class="categories"><a href="http://localhost/Booking-System/about-us/">About US</a></li>
                     </ul>
                 </div>
                 <div class="footer-col2">
                     <h4 class="heading4">follow us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -853,12 +825,9 @@ ul {
                     &copy; 2024 Bookin
                 </div>
                 <div class="right-column">
-                    <div class="privacy-policy">
-                        Privacy Policy
-                    </div>
-                    <div class="terms-conditions">
+                    <a href="http://localhost/Booking-System/terms/" class="privacy-policy">
                         Terms and Conditions
-                    </div>
+                    </a>
                 </div>
             </div>
 

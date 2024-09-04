@@ -1,3 +1,4 @@
+<?php include("database.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +13,6 @@
     <header>
         <nav>
             <a href="#" class="logo">Bookin</a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
         </nav>
     </header>
     
@@ -26,7 +22,7 @@
         </div>
         <div class="login-column">
             <h1>Login Page</h1>
-            <form action="database.php" id="login-form" method="post" onsubmit="return login()">
+            <form id="login-form" method="post" onsubmit="return login()">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Your email address" required>
                 
@@ -35,6 +31,7 @@
                 
                 <button type="submit">LOG IN</button>
             </form>
+            <a href="http://localhost/Booking-System/sign-up/">Dont have an account</a>
             <div class="error-message" id="error-message"></div>
         </div>
     </div>
@@ -51,15 +48,6 @@
                     <form>
                         <input type="email" placeholder="Enter Your email">
                     </form>
-                </div>
-                <div class="footer-col">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Booking</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
                 </div>
                 
                 <div class="footer-col">
@@ -81,28 +69,19 @@
             var loginpassword = document.getElementById("password").value;
             var error = document.getElementById("error-message");
 
-            error.textContent = ""; // Clear previous errors
+            error.textContent = ""; 
 
-            // Email and password validation
             if (loginemail.trim() === "" || loginpassword.trim() === "") {
                 error.textContent = "Please enter both email and password.";
                 return false;
             }
 
-            // Email format validation
             var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (!emailPattern.test(loginemail)) {
                 error.textContent = "Please enter a valid email address.";
                 return false;
             }
 
-            // Password length validation
-            if (loginpassword.length < 6) {
-                error.textContent = "Password must be at least 6 characters long.";
-                return false;
-            }
-
-            // If validation passes, submit the form
             return true;
         }
     </script>

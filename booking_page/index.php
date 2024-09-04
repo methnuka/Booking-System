@@ -296,29 +296,26 @@ input {
                         </div>
                     </div>
                 </div>
-                <form action="/receipts1/index.php" method="POST">
-    <div class="total">
-        <div class="inf">
-            <span>Selected seats</span>
-            <span><span class="count">0</span> tickets</span>
-            <!-- Hidden input for selected seats -->
-            <input type="hidden" name="selected_seats" class="hidden-seats" value="0">
-        </div>
-        <div class="inf">
-            <span>Seat number</span>
-            <span class="seat-numbers"></span>
-            <!-- Hidden input for seat numbers -->
-            <input type="hidden" name="seat_numbers" class="hidden-seat-numbers" value="">
-        </div>
-        <div class="inf">
-            <span>Ticket Price</span>
-            <span><span class="amount">0</span> RS</span>
-            <!-- Hidden input for ticket price -->
-            <input type="hidden" name="ticket_price" class="hidden-ticket-price" value="0">
-        </div>
-    </div>
-    <button type="submit">Book</button>
-</form>
+                <form action="http://localhost/Booking-System/receipts_page/" method="POST">
+                    <div class="total">
+                        <div class="inf">
+                            <span>Selected seats</span>
+                            <span><span class="count">0</span> tickets</span>
+                            <input type="hidden" name="selected_seats" class="hidden-seats" value="0">
+                        </div>
+                        <div class="inf">
+                            <span>Seat number</span>
+                            <span class="seat-numbers"></span>
+                            <input type="hidden" name="seat_numbers" class="hidden-seat-numbers" value="">
+                        </div>
+                        <div class="inf">
+                            <span>Ticket Price</span>
+                            <span><span class="amount">0</span> RS</span>
+                            <input type="hidden" name="ticket_price" class="hidden-ticket-price" value="0">
+                        </div>
+                    </div>
+                        <button type="submit">Book</button>
+                </form>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
